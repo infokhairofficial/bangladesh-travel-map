@@ -1,0 +1,1392 @@
+CREATE A COMPLETE PRODUCTION-QUALITY WEBSITE FROM SCRATCH
+
+PROJECT NAME:
+Bangladesh Travel Map
+
+WEBSITE PURPOSE:
+Build a beautiful, modern, responsive and interactive travel platform for exploring Bangladesh's 8 divisions and all 64 districts.
+
+The website should combine:
+
+Bangladesh Interactive Map
+64 District Explorer
+8 Division Explorer
+Tourist Guide
+Tourist Places
+Food Guide
+Transportation Guide
+Trip Planner
+Travel Budget Calculator
+Favorites
+Travel Journal
+District Challenge
+Travel Blog
+Search
+Bangla + English
+Dark + Light Mode
+PWA / Installable Website
+Offline Static Data
+Responsive Mobile Experience
+
+==================================================
+1. MOST IMPORTANT REQUIREMENTS
+==================================================
+
+Build the website as a complete working application, NOT as a static visual mockup.
+
+All major buttons, navigation, search, filters, map interactions, favorites, trip planner and LocalStorage features must actually work.
+
+IMPORTANT:
+
+Do NOT use Supabase.
+
+Do NOT use Firebase.
+
+Do NOT require a backend.
+
+Do NOT require database credentials.
+
+Do NOT require:
+
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+VITE_SUPABASE_PUBLISHABLE_KEY
+
+Do NOT require any .env file for the core application.
+
+The application must run with:
+
+npm install
+npm run dev
+
+The core website must work without API keys.
+
+Use:
+
+React
+Vite
+TypeScript
+Tailwind CSS
+React Router
+Leaflet / React Leaflet
+Lucide React
+LocalStorage
+Static JSON / TypeScript data
+
+==================================================
+2. RESPONSIVE DESIGN IS CRITICAL
+==================================================
+
+The website must be fully responsive.
+
+It must work perfectly on:
+
+320px
+360px
+375px
+390px
+412px
+430px
+768px
+1024px
+1280px
+1440px+
+
+The website must fit the viewport at 100% browser zoom.
+
+The user must NOT need to zoom in or zoom out to see the complete website.
+
+There must NEVER be an unwanted horizontal scrollbar.
+
+There must NEVER be a large empty white area on the right side.
+
+There must NEVER be content extending outside the mobile viewport.
+
+IMPORTANT:
+
+DO NOT JUST USE:
+
+overflow-x: hidden;
+
+That is NOT an acceptable solution.
+
+Do NOT simply hide overflow.
+
+Find the actual element causing the overflow and fix its:
+
+width
+min-width
+max-width
+margin
+padding
+position
+grid
+flex
+image size
+map size
+transform
+absolute positioning
+fixed positioning
+
+The actual responsive layout problem must be fixed.
+
+Use:
+
+box-sizing: border-box;
+
+for all elements.
+
+Use responsive widths.
+
+Avoid unnecessary fixed widths.
+
+Do not use large desktop widths on mobile.
+
+==================================================
+3. VIEWPORT
+==================================================
+
+Make sure the application includes:
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
+
+Do NOT disable browser zoom.
+
+Do NOT use:
+
+user-scalable=no
+
+The website should naturally fit the screen.
+
+==================================================
+4. HEADER
+==================================================
+
+Create a professional sticky header.
+
+Desktop header:
+
+Left:
+Bangladesh Travel Map logo
+
+Center/right:
+Home
+Explore
+Districts
+Map
+Trip Planner
+Favorites
+Blog
+About
+
+Right:
+Language
+Dark/Light mode
+Login
+Sign Up
+
+Mobile header:
+
+LEFT:
+Logo
+
+RIGHT:
+Language
+Theme
+Profile/Login
+Hamburger
+
+All buttons must remain visible.
+
+The Login/Profile and Hamburger icons must NEVER move outside the viewport.
+
+Do not allow the header to become wider than the screen.
+
+On very small devices:
+
+Reduce:
+logo font size
+button padding
+gap
+
+But keep all important controls accessible.
+
+==================================================
+5. HAMBURGER MENU
+==================================================
+
+Create a professional mobile navigation drawer.
+
+Menu items:
+
+Home
+Explore
+Districts
+Map
+Trip Planner
+Favorites
+Travel Journal
+Blog
+About
+Login
+Sign Up
+
+The drawer must:
+
+- Open smoothly
+- Close smoothly
+- Have close button
+- Work on mobile
+- Not create horizontal overflow
+- Cover the correct viewport width
+- Keep scrolling inside the menu if needed
+
+==================================================
+6. BRANDING
+==================================================
+
+Brand name:
+
+Bangladesh Travel Map
+
+Use a simple Bangladesh-inspired logo.
+
+Logo concept:
+
+Green location/map symbol + Bangladesh Travel Map text.
+
+Primary visual identity:
+
+Bangladesh-inspired green.
+
+Keep the interface modern and premium.
+
+==================================================
+7. HERO SECTION
+==================================================
+
+Create a beautiful hero section.
+
+Headline:
+
+"Explore Bangladesh,
+One District at a Time."
+
+Bangla version:
+
+"বাংলাদেশ ঘুরে দেখুন,
+জেলায় জেলায়।"
+
+Subtitle:
+
+"Discover all 64 districts, explore iconic landmarks, discover local food, plan unforgettable journeys, and track your Bangladesh adventure."
+
+Buttons:
+
+Explore Interactive Map
+
+Start Journey
+
+Use a beautiful Bangladesh travel landscape image as the background/hero visual.
+
+IMPORTANT IMAGE REQUIREMENT:
+
+The hero image MUST actually load and be visible.
+
+Do not use broken image URLs.
+
+Do not use fake image paths.
+
+If an external image fails:
+
+automatically show a fallback image or attractive gradient background.
+
+Images must never leave an empty broken-image area.
+
+==================================================
+8. IMAGE SYSTEM
+==================================================
+
+This is extremely important.
+
+All important website images must be visible.
+
+Use a reliable image strategy.
+
+Create:
+
+src/data/images.ts
+
+and define image URLs centrally.
+
+Every image must have:
+
+src
+alt
+fallback
+
+Example structure:
+
+{
+  src: "...",
+  alt: "Cox's Bazar beach",
+  fallback: "/images/fallback.jpg"
+}
+
+Use:
+
+loading="lazy"
+
+for normal content images.
+
+Use:
+
+loading="eager"
+
+for the main hero image.
+
+Use:
+
+width: 100%;
+height: 100%;
+object-fit: cover;
+
+inside image containers.
+
+Use an onError handler.
+
+If an image fails:
+
+replace it with a local fallback image.
+
+Never show a broken image icon.
+
+IMPORTANT:
+
+Do not depend on temporary image URLs.
+
+Use stable image URLs or local public assets.
+
+For critical images, prefer local assets in:
+
+public/images/
+
+Create fallback images:
+
+public/images/fallback-district.jpg
+public/images/fallback-place.jpg
+public/images/fallback-food.jpg
+public/images/bangladesh-map.jpg
+
+The website must still look complete even if an external image source is unavailable.
+
+==================================================
+9. BANGLADESH MAP
+==================================================
+
+Create a large interactive Bangladesh map.
+
+Use:
+
+Leaflet
+React Leaflet
+
+The map should show:
+
+Bangladesh
+8 divisions
+64 districts
+
+Use local GeoJSON data where possible.
+
+Do not depend on a private API.
+
+District boundaries should be interactive.
+
+When hovering:
+
+Show district name.
+
+When clicking:
+
+Open district information.
+
+Map controls:
+
+Zoom in
+Zoom out
+Reset view
+Fullscreen
+Marker toggle
+Legend
+
+The map must be responsive.
+
+Desktop:
+
+Map can be large.
+
+Mobile:
+
+Map must fit the screen.
+
+Mobile map height:
+
+approximately 350–450px.
+
+Do NOT use a fixed width larger than the viewport.
+
+==================================================
+10. LEAFLET RESPONSIVE FIX
+==================================================
+
+Make sure the Leaflet map correctly calculates its size.
+
+When the map container changes size:
+
+call:
+
+map.invalidateSize()
+
+when appropriate.
+
+Run it after:
+
+component mount
+window resize
+mobile menu changes
+section visibility changes
+modal opening
+modal closing
+
+The map must never appear blank because of an incorrect container size.
+
+==================================================
+11. 64 DISTRICTS
+==================================================
+
+Include ALL 64 official districts of Bangladesh.
+
+Organize them correctly under the 8 divisions.
+
+DIVISIONS:
+
+Dhaka
+Chattogram
+Rajshahi
+Khulna
+Barishal
+Sylhet
+Rangpur
+Mymensingh
+
+The data must contain the correct district names and division assignments.
+
+Create:
+
+src/data/districts.ts
+
+Each district should include:
+
+id
+name
+nameBn
+division
+divisionBn
+coordinates
+description
+descriptionBn
+image
+famousPlaces
+touristSpots
+foods
+rivers
+history
+bestTime
+travelTips
+tags
+
+Do not invent official geographical facts.
+
+==================================================
+12. DISTRICT DIRECTORY
+==================================================
+
+Create:
+
+/districts
+
+Show all 64 districts.
+
+Each card:
+
+District image
+District name
+Bangla name
+Division
+Short description
+Favorite button
+Explore button
+
+Filters:
+
+All
+Dhaka
+Chattogram
+Rajshahi
+Khulna
+Barishal
+Sylhet
+Rangpur
+Mymensingh
+
+Search:
+
+District name
+Bangla name
+Division
+Tourist place
+Food
+Tags
+
+==================================================
+13. DISTRICT DETAILS
+==================================================
+
+Create:
+
+/district/:id
+
+Sections:
+
+Overview
+Tourist Places
+Famous Places
+Local Food
+History
+Rivers & Nature
+How to Go
+Best Time to Visit
+Travel Tips
+Nearby Districts
+
+Add:
+
+Favorite
+Add to Trip
+Mark as Visited
+Share
+
+Image gallery must work.
+
+If any image fails, show fallback.
+
+==================================================
+14. TOURIST PLACES
+==================================================
+
+Create a tourist-place database.
+
+Categories:
+
+Beach
+Nature
+Historical
+Religious
+Hill
+Forest
+River
+Museum
+Park
+Adventure
+Photography
+Cultural
+
+Each place:
+
+id
+name
+nameBn
+district
+division
+category
+description
+image
+coordinates
+bestTime
+estimatedVisitDuration
+entryFee
+tags
+
+Create:
+
+Tourist Places page
+
+Filters:
+
+Category
+Division
+District
+Popular
+Nature
+Historical
+
+==================================================
+15. FOOD GUIDE
+==================================================
+
+Create:
+
+/food
+
+Show famous/local foods by district.
+
+Each food:
+
+Name
+Bangla name
+District
+Description
+Image
+Category
+Estimated price
+
+Categories:
+
+Traditional
+Street Food
+Main Food
+Snack
+Dessert
+
+IMPORTANT:
+
+If exact price is unavailable:
+
+show:
+
+"Estimated price"
+
+Never present an unverified price as an official price.
+
+Images must load or use fallback.
+
+==================================================
+16. TRANSPORT / HOW TO GO
+==================================================
+
+Create:
+
+How to Go section.
+
+For each district show available information for:
+
+Bus
+Train
+Launch
+Ferry
+CNG
+Auto-rickshaw
+Local transport
+
+Show:
+
+From Dhaka
+From Chattogram
+Nearest transport hub
+
+Add:
+
+View Route
+Open Map
+
+Do NOT invent exact schedules.
+
+If schedule data is unavailable:
+
+"Check the local transport operator for the latest schedule."
+
+==================================================
+17. TRIP PLANNER
+==================================================
+
+Create:
+
+/trips
+
+Users can:
+
+Create trip
+Set trip name
+Select districts
+Select tourist places
+Set travel date
+Set number of days
+Set number of travelers
+Add notes
+Set estimated budget
+Reorder destinations
+Remove destinations
+
+Example:
+
+Bangladesh Adventure
+
+Dhaka
+Cumilla
+Chattogram
+Cox's Bazar
+
+Store everything in LocalStorage.
+
+No backend required.
+
+==================================================
+18. BUDGET CALCULATOR
+==================================================
+
+Create a Travel Budget Calculator.
+
+Inputs:
+
+Number of travelers
+Number of days
+Transport
+Hotel per night
+Food per person/day
+Entry fees
+Other expenses
+
+Currency:
+
+৳ Bangladeshi Taka
+
+Calculate:
+
+Transport
+Hotel
+Food
+Entry fees
+Other
+Total
+
+Allow:
+
+Save Estimate
+Reset
+Add to Trip
+
+==================================================
+19. FAVORITES
+==================================================
+
+Create:
+
+/favorites
+
+Users can favorite:
+
+Districts
+Tourist Places
+Food
+Blog posts
+
+Use LocalStorage.
+
+Tabs:
+
+All
+Districts
+Places
+Food
+Articles
+
+==================================================
+20. 64 DISTRICT CHALLENGE
+==================================================
+
+Create:
+
+"Explore All 64 Districts"
+
+Show:
+
+0 / 64 Districts Explored
+
+When marked visited:
+
+Update progress.
+
+Show percentage.
+
+Achievements:
+
+First District
+5 Districts
+10 Districts
+25 Districts
+50 Districts
+64 Districts
+
+When all 64 are completed:
+
+Show:
+
+"Bangladesh Explorer"
+
+Use a tasteful celebration animation.
+
+Store progress in LocalStorage.
+
+==================================================
+21. TRAVEL JOURNAL
+==================================================
+
+Create:
+
+/journal
+
+Users can create:
+
+Title
+District
+Date
+Description
+Rating
+Photo
+
+Store in LocalStorage.
+
+Features:
+
+Create
+Edit
+Delete
+Search
+Filter
+View details
+
+==================================================
+22. GLOBAL SEARCH
+==================================================
+
+Create a powerful global search.
+
+Search:
+
+Districts
+Tourist Places
+Food
+Blog
+Tags
+Divisions
+
+Show grouped results:
+
+Districts
+Tourist Places
+Food
+Articles
+
+Search should work in both:
+
+বাংলা
+English
+
+==================================================
+23. DISTRICT COMPARISON
+==================================================
+
+Allow users to compare up to 3 districts.
+
+Compare:
+
+Division
+Tourist places
+Food
+Nature
+Best time
+Travel style
+Estimated budget
+Number of attractions
+
+Create a responsive comparison table.
+
+==================================================
+24. SMART RECOMMENDATIONS
+==================================================
+
+Create a local recommendation system.
+
+Ask:
+
+Trip duration
+Travel style
+Budget
+Interest
+
+Options:
+
+Nature
+Beach
+History
+Food
+Adventure
+Family
+Photography
+
+Recommend districts using local data.
+
+No AI API required.
+
+==================================================
+25. TRAVEL BLOG
+==================================================
+
+Create:
+
+/blog
+
+Categories:
+
+Travel Guide
+Budget Travel
+Food
+History
+Nature
+Adventure
+Family
+Photography
+
+Each article:
+
+Title
+Image
+Category
+Date
+Description
+Read More
+
+Images must always have fallback.
+
+==================================================
+26. BANGLA + ENGLISH
+==================================================
+
+Add language switch.
+
+Languages:
+
+বাংলা
+English
+
+Translate all UI labels.
+
+Store language preference in LocalStorage.
+
+Examples:
+
+Home → হোম
+Explore → অন্বেষণ
+Map → মানচিত্র
+Districts → জেলাসমূহ
+Trip Planner → ভ্রমণ পরিকল্পনা
+Favorites → পছন্দের তালিকা
+Travel Journal → ভ্রমণ ডায়েরি
+
+==================================================
+27. DARK / LIGHT MODE
+==================================================
+
+Create a premium dark/light mode.
+
+Dark mode:
+
+Black / deep charcoal
+Bangladesh green accent
+Soft borders
+Readable text
+
+Light mode:
+
+White
+Soft gray
+Green accents
+
+Save preference in LocalStorage.
+
+==================================================
+28. MOBILE BOTTOM NAVIGATION
+==================================================
+
+On mobile create fixed bottom navigation:
+
+Home
+Explore
+Map
+Trip Planner
+Poster Map
+
+Use:
+
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+
+Every item:
+
+min-width: 0;
+
+The navigation must fit perfectly.
+
+No horizontal overflow.
+
+==================================================
+29. PWA
+==================================================
+
+Make the website installable.
+
+Create:
+
+manifest.json
+service worker
+icons
+
+Add:
+
+Install Bangladesh Travel Map
+
+button.
+
+Cache important static data.
+
+The app should continue working with core district information offline.
+
+==================================================
+30. OFFLINE SUPPORT
+==================================================
+
+Cache:
+
+District data
+Tourist data
+Food data
+UI assets
+Fallback images
+
+Show:
+
+"You're offline"
+
+When connection returns:
+
+"You're back online"
+
+Core application must remain usable.
+
+==================================================
+31. EMERGENCY INFORMATION
+==================================================
+
+Create Emergency Help section.
+
+Categories:
+
+Police
+Fire Service
+Ambulance
+Tourist Police
+Hospitals
+
+Only use verified information.
+
+Do not invent phone numbers.
+
+==================================================
+32. TRAVEL STATISTICS
+==================================================
+
+Create a beautiful statistics section.
+
+Show:
+
+64 Districts
+8 Divisions
+Tourist Places
+Historical Places
+Nature Spots
+Beaches
+Food Destinations
+
+Use animated counters.
+
+==================================================
+33. RECENTLY VIEWED
+==================================================
+
+Store the last 10 viewed:
+
+Districts
+Tourist Places
+Food
+
+Show:
+
+Recently Explored
+
+Use LocalStorage.
+
+==================================================
+34. SHARE
+==================================================
+
+Add Share buttons.
+
+Use Web Share API when supported.
+
+Fallback:
+
+Copy Link
+
+Do not expose private user data.
+
+==================================================
+35. ACCESSIBILITY
+==================================================
+
+Use:
+
+Semantic HTML
+ARIA labels
+Keyboard navigation
+Focus states
+Alt text
+Accessible modals
+Accessible buttons
+Good contrast
+
+==================================================
+36. PERFORMANCE
+==================================================
+
+Optimize:
+
+Images
+Map
+Components
+Routing
+
+Use:
+
+Lazy loading
+Code splitting
+Memoization where useful
+Responsive images
+
+Do not load huge images unnecessarily.
+
+==================================================
+37. IMAGE LOADING REQUIREMENT
+==================================================
+
+This requirement is extremely important.
+
+The website MUST NOT show blank image boxes.
+
+Every image component must have:
+
+1. Loading state
+2. Successful image
+3. Error fallback
+
+Example logic:
+
+If image loads:
+show image.
+
+If image fails:
+show fallback image.
+
+Never show:
+
+broken image icon
+empty white box
+missing image URL
+
+Use local fallback assets inside:
+
+/public/images/
+
+Create at least:
+
+fallback-district.jpg
+fallback-tourist.jpg
+fallback-food.jpg
+fallback-blog.jpg
+bangladesh-travel.jpg
+
+==================================================
+38. FOOTER
+==================================================
+
+Create a professional full-width footer.
+
+Include:
+
+Bangladesh Travel Map
+
+বাংলাদেশ ঘুরে দেখুন, জেলায় জেলায়।
+
+Navigation:
+
+নীড়পাতা
+অন্বেষণ
+জেলাসমূহ
+মানচিত্র
+ভ্রমণ পরিকল্পনা
+পোস্টার ম্যাপ
+
+Footer should be responsive.
+
+On mobile:
+
+Stack content vertically.
+
+No horizontal overflow.
+
+At the very bottom, EXACTLY display:
+
+© 2026 Bangladesh Travel Map — All rights reserved.
+Crafted & Developed by Abul Khair
+
+Do not change this wording.
+
+==================================================
+39. FILE STRUCTURE
+==================================================
+
+Use a clean structure:
+
+src/
+  components/
+    Header/
+    Footer/
+    Map/
+    District/
+    Tourist/
+    Food/
+    Trip/
+    Journal/
+    Search/
+    Navigation/
+
+  pages/
+    Home.tsx
+    Explore.tsx
+    Districts.tsx
+    DistrictDetails.tsx
+    MapPage.tsx
+    Trips.tsx
+    Favorites.tsx
+    Journal.tsx
+    Food.tsx
+    Blog.tsx
+    About.tsx
+
+  data/
+    districts.ts
+    divisions.ts
+    touristSpots.ts
+    foods.ts
+    transport.ts
+    blogs.ts
+    images.ts
+
+  utils/
+    storage.ts
+    budget.ts
+    recommendations.ts
+
+  hooks/
+    useLocalStorage.ts
+    useResponsive.ts
+
+  assets/
+
+public/
+  images/
+    fallback-district.jpg
+    fallback-tourist.jpg
+    fallback-food.jpg
+    fallback-blog.jpg
+    bangladesh-travel.jpg
+
+==================================================
+40. HOME PAGE STRUCTURE
+==================================================
+
+Home page should contain:
+
+Header
+
+Hero
+
+Search
+
+Interactive Bangladesh Map
+
+Bangladesh at a Glance
+
+8 Divisions
+
+Popular Districts
+
+Featured Tourist Places
+
+Local Food
+
+Travel Tips
+
+64 District Challenge
+
+Trip Planner CTA
+
+Travel Blog
+
+Footer
+
+==================================================
+41. DESKTOP LAYOUT
+==================================================
+
+Desktop should look premium.
+
+Use maximum content width around:
+
+1200–1400px
+
+Center the content.
+
+Map sections can use:
+
+Map + Information panel
+
+Cards can use:
+
+3–4 columns.
+
+==================================================
+42. MOBILE LAYOUT
+==================================================
+
+Mobile should be completely redesigned responsively.
+
+Use:
+
+Single-column sections
+Full-width cards
+Responsive map
+Comp
